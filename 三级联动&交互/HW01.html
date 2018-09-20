@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>syfubest</title>
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="js/省市.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<select>
+		</select>
+		
+		<select>
+		</select>
+		
+		<select>
+		</select>
+	</body>
+	<script type="text/javascript">
+		
+		$(()=>{
+			
+			
+			$('select:first').change(()=>{
+				for(var j in citiesall){
+					if($('select:first').val() == citiesall[j].name){
+						var firVal = citiesall[j];
+						var secSel = '';
+						for(var k in firVal.city){
+							
+							secSel += '<option>'+firVal.city[k].name+'</option>';
+							
+						}
+						$('select').eq(1).html(secSel)
+						
+						secSel = '';
+						
+						for(var l in firVal.city[0].area){
+							
+							secSel += '<option>'+firVal.city[0].area[l]+'</option>';
+							
+						}
+						
+						$('select').eq(2).html(secSel)
+						
+						
+						
+					}
+				}
+			})
+			
+			
+			$('select').eq(1).change(()=>{
+				var curPVal = $('select').eq(0).val();
+				var curCVal = $('select').eq(1).val();
+//				console.log(curVal)
+				for(var m in citiesall){
+					if(curPVal == citiesall[m].name){
+						for(var n in citiesall[m].city){
+							if(curCVal == citiesall[m].city[n].name){
+								var thiSel = '';
+								for(var y in citiesall[m].city[n].area){
+									thiSel += '<option>'+citiesall[m].city[n].area[y]+'</option>'
+								}
+								$('select').eq(2).html(thiSel)
+							}
+						}
+					}
+				}
+				
+				
+			})
+			
+			
+			
+			
+			
+			var firSel = '';
+			for(var i in citiesall){
+				firSel += '<option>'+ citiesall[i].name  +'</option>'
+			}
+			$('select:first').html(firSel);
+			
+			
+			firSel = '';
+
+			for(q in citiesall[0].city){
+				firSel += '<option>'+citiesall[0].city[q].name+'</option>';
+			}
+			$('select').eq(1).html(firSel)
+			
+			firSel = '';
+			
+			for(var n in citiesall[0].city[0].area){
+				firSel += '<option>'+citiesall[0].city[0].area[n]+'</option>'
+				$('select').eq(2).html(firSel)
+			}
+			
+		})
+		
+		
+		
+	</script>
+</html>

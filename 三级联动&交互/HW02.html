@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/jquery.js'></script>
+	<style>
+	*{
+		margin:0px;
+		padding:0px;
+	}
+	div{
+		width: 400px;
+		height: 400px;
+		margin:20px auto;
+		background-color:lightgreen;
+		color:#FFF;
+	}
+	ul{
+		width:100px;
+		position: fixed;
+		right:-20px;
+		top:400px;
+		list-style: none;
+
+	}
+	ul li{
+		width:30px;
+		height:30px;
+		line-height: 30px;
+		text-align: center;
+		color:#FFF;
+		background-color:#ccc;
+		border-radius: 15px;
+		
+		margin-top: 5px;
+	}
+	/*ul li:hover,ul li.hover{
+		background: green;
+	}*/
+	.ho{
+		background: green;
+	}
+	</style>
+</head>
+<body>
+<ul>
+	<li class="hover">1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ul>
+	<div>111111</div>
+	<div>22222</div>
+	<div>333333333333333333333333333333333333333333333333333333333333333333333333333333333333<b</div>
+	<div>4444</div>
+	<div>55555</div>
+
+	<script>
+		
+		$(()=>{
+			
+			//no2.....350
+			//no3.....800
+			//no4.....1171
+			
+			$('ul li').each((i,e)=>{
+				console.log(e)
+				$(e).hover(()=>{
+					switch (i){
+						case 0:
+							$(document).scrollTop(0)
+							break;
+						case 1:
+							$(document).scrollTop(350)
+							break;
+						case 2:
+							$(document).scrollTop(800)
+							break;
+						case 3:
+							$(document).scrollTop(1171)
+							break;
+						default:
+							break;
+					}
+					
+				})
+				
+			})
+			
+			
+			$(document).scroll(function(){
+				
+				var val = $(document).scrollTop();
+				if(val == 0){
+					$('ul li').eq(0).css('backgroundColor','green')
+					
+					$('ul li').each((i,e)=>{
+							if(i == 0){
+								$(e).css('backgroundColor','green')
+							}else{
+								$(e).css('backgroundColor','#ccc')
+							}
+					})
+				}else if((val >= 300) && (val < 500)){
+					$('ul li').eq(1).css('backgroundColor','green');
+					
+					$('ul li').each((i,e)=>{
+							if(i == 1){
+								$(e).css('backgroundColor','green')
+							}else{
+								$(e).css('backgroundColor','#ccc')
+							}
+					})
+					
+				}else if((val >= 500) && (val < 900)){
+					$('ul li').eq(2).css('backgroundColor','green');
+					
+					$('ul li').each((i,e)=>{
+							if(i == 2){
+								$(e).css('backgroundColor','green')
+							}else{
+								$(e).css('backgroundColor','#ccc')
+							}
+					})
+				}else if(val >= 900){
+					$('ul li').eq(3).css('backgroundColor','green');
+					$('ul li').each((i,e)=>{
+							if(i == 3){
+								$(e).css('backgroundColor','green')
+							}else{
+								$(e).css('backgroundColor','#ccc')
+							}
+					})
+				}
+				
+			})
+		})
+		
+	</script>
+</body>
+</html>
