@@ -28,7 +28,7 @@
 		<a href="https://zsfbest.github.io/合班后/开关.html">开关（html）</a>
 		<a href="https://zsfbest.github.io/合班后/立方体.html">3D立方体</a>
 		<a href="https://zsfbest.github.io/合班后/立起.html">立起</a>
-		<a href="https://zsfbest.github.io/index.html">侧边栏</a>
+		<a href="https://zsfbest.github.io/nav.html">侧边栏</a>
         <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#987cb9 SIZE=3>
 
 <br />
