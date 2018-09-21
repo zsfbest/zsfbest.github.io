@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			label{
+				position: relative;
+				width: 50px;
+				height: 20px;
+			}
+			input{
+				display: none;
+			}
+			div{
+				width: 50px;
+				height: 20px;
+				background: lightgreen;
+			}
+			div:before{
+				position: absolute;
+				content: "";
+				height: 18px;
+				width: 20px;
+				top: 1px;
+				left: 1px;
+				background-color: white;
+				-webkit-transition: .4s;
+				transition: .4s;
+			}
+			input:checked+div:before{
+				-webkit-transform: translateX(26px);
+				-ms-transform: translateX(26px);
+				transform: translateX(26px);
+			}
+			input:checked+div{
+				background: red;
+			}
+			.rad{
+				border-radius: 25px;
+			}
+			.rad:before{
+				
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<label>
+			<input type="checkbox" />
+			<div ></div>
+		</label>
+		
+		<label>
+			<input type="checkbox"/>
+			<div class="rad"></div>
+		</label>
+		
+	</body>
+</html>

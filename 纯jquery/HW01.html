@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>syfubest</title>
+		<script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+		<!--<style type="text/css">
+			div{
+				position: absolute;
+				position: relative;
+				bottom: ;
+			}
+		</style>-->
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		
+		$(()=>{
+			
+			$('body').append('<div id="big"></div>')
+			$('div').css({
+				width:1000,
+				height:500,
+				border:'solid 2px #ccc'
+			})
+			$('#big').append('<div />')
+			$('#big>div:first').css({
+				backgroundColor:'lightgreen',
+				width:50,
+				height:500,
+				float:'left'
+			})
+			for(var i=1;i<10;i++){
+				var num = 500-50*i;
+				var mtop = 50*i;
+				var marginL = 50;
+				$('#big').append($('#big div').eq(i-1).clone())
+				$('#big div').eq(i).css({
+					marginLeft:marginL,
+					height:num,
+					marginTop:mtop
+				})
+				
+			}
+		})
+		
+		
+	</script>
+</html>

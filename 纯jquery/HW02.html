@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>syfubest</title>
+		<script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+		<style type="text/css">
+			td{
+				border: solid 1px lightgreen;
+				width: 50px;
+				height: 50px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+	
+	<script type="text/javascript">
+		$(()=>{
+			$('body').html('<table/>');
+			
+			$('table').css({
+				border:'solid 1px #ccc',
+				margin:'auto'
+			})
+			
+			
+			for(var i = 0;i<25;i++){
+				$('table').append("<tr />");
+			}
+			console.log($('tr').length)
+			for(var i=0;i<$('tr').length;i++){
+				for(var j=0;j<$('tr').length;j++){
+					$('tr').eq(i).append('<td>'+i+'</td>')
+				}
+			}
+		})
+	</script>
+	
+</html>

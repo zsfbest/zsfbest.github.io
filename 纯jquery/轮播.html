@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				float: left;
+				width: 200px;
+				height: 300px;
+			}
+			div:first-child{
+				width: 200px;
+				height: 300px;
+				margin: 100px auto;
+				overflow: hidden;
+			}
+			#sel{
+				width: 350px;
+				margin: 0 auto;
+			}
+			#sel>span{
+				display: inline-block;
+				width: 80px;
+				text-align: center;
+				cursor: pointer;
+			}
+		</style>
+		<script src="jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div>
+			<img src="6.jpg"/>
+			<img src="img/1.jpg"/>
+			<img src="img/2.jpg"/>
+			<img src="img/3.jpg"/>
+			<img src="img/4.jpg"/>
+		</div>
+		<div id="sel">
+			<span><</span>
+			<span><<</span>
+			<span>>></span>
+			<span>></span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(()=>{
+			var i = 0
+			var timeId = setInterval(()=>{
+				if(i > 4) i=0;
+				$('div img').css('display','none')
+				$('div img').eq(i).css('display','block')
+				i++
+			},1000)
+		})
+	</script>
+</html>

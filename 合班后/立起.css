@@ -1,0 +1,92 @@
+html {
+  height: 100%;
+  background: -webkit-radial-gradient(center ellipse, #106D0D 0%, #000000 100%);
+  background: radial-gradient(ellipse at center, #106D0D 0%, #000000 100%);
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.stag {
+  width: 50em;
+  height: 30em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -30em;
+  margin-top: -10em;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000000px;
+          perspective: 1000000px;
+  -webkit-perspective-origin: 15% 30%;
+          perspective-origin: 15% 30%;
+}
+.box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 4s;
+          transition-duration: 4s;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+img {
+  width: 50em;
+  height: 30em;
+  position: absolute;
+}
+.lft div {
+  position: absolute;
+}
+.front {
+  -webkit-transform: translateZ(20em) translateX(7.5em) translateY(9em);
+          transform: translateZ(20em) translateX(7.5em) translateY(9em);
+  width: 5em;
+  height: 5em;
+  background: red;
+}
+.back {
+  -webkit-transform: translateZ(0em) translateX(7.5em) translateY(9em);
+          transform: translateZ(0em) translateX(7.5em) translateY(9em);
+  width: 5em;
+  height: 5em;
+  background: blue;
+}
+.left {
+  -webkit-transform: rotateY(-90deg) translateZ(2.5em) translateX(10em) translateY(9em);
+          transform: rotateY(-90deg) translateZ(2.5em) translateX(10em) translateY(9em);
+  width: 20em;
+  height: 5em;
+  background: lightgreen;
+}
+.right {
+  -webkit-transform: rotateY(90deg) translateZ(2.5em) translateX(-10em) translateY(9em);
+          transform: rotateY(90deg) translateZ(2.5em) translateX(-10em) translateY(9em);
+  width: 20em;
+  height: 5em;
+  background: lightblue;
+}
+.top {
+  -webkit-transform: rotateX(90deg) translateZ(1em) translateX(7.5em) translateY(10em);
+          transform: rotateX(90deg) translateZ(1em) translateX(7.5em) translateY(10em);
+  width: 5em;
+  height: 20em;
+  background: honeydew;
+}
+.bottom {
+  -webkit-transform: rotateX(-90deg) translateZ(4em) translateX(7.5em) translateY(-10em);
+          transform: rotateX(-90deg) translateZ(4em) translateX(7.5em) translateY(-10em);
+  width: 5em;
+  height: 20em;
+  background: fuchsia;
+}
+.stag:hover .box {
+  -webkit-transform: rotateX(45deg) rotateY(-10deg);
+          transform: rotateX(45deg) rotateY(-10deg);
+}
+/*# sourceMappingURL=./立起.css.map */

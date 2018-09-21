@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				position: absolute;
+				width: 30em;
+				height: 30em;
+				left: 50%;
+				top: 50%;
+				margin-left: -15em;
+				margin-top: -10em;
+			}
+			.stag{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				perspective: 3500px;
+				transform-style: preserve-3d;
+			}
+			.stag>div{
+				position: absolute;
+				width: 20em;
+				height: 20em;
+				line-height: 20em;
+				text-align: center;
+				border-radius: 50%;
+			}
+			
+			
+			/*设置成圆形*/
+			
+			.front{
+				transform: translateZ(30em) ;
+				background: hotpink;
+			}
+			.back{
+				background: darkblue;
+			}
+			.left{
+				transform: rotateY(90deg)  translateX(-15em) translateZ(-13em);
+				background: lightgreen;
+			}
+			.right{
+				transform: rotateY(90deg) translateX(-15em) translateZ(13em);
+				background: firebrick;
+			}
+			.top{
+				transform: rotateX(90deg) translateY(15em) translateZ(13em);
+				background: red;
+			}
+			.bottom{
+				transform: rotateX(-90deg) translateY(-15em) translateZ(13em);
+				background: #ccc;
+			}
+			.box:hover .stag{
+				animation: syfubest 12s ease-in-out infinite;
+			}
+			@keyframes syfubest{
+				from{
+					transform: rotateX(0deg) rotateY(0deg);
+				}
+				to{
+					transform: rotateX(360deg) rotateZ(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<div class="stag">
+				<div class="front">前</div>
+				<div class="back">后</div>
+				<div class="left">左</div>
+				<div class="right">右</div>
+				<div class="top">上</div>
+				<div class="bottom">下</div>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

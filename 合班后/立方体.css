@@ -1,0 +1,74 @@
+html {
+	height: 100%;
+	background: radial-gradient(ellipse at center, #106D0D 0%, #000000 100%);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.stag {
+	width: 20em;
+	height: 20em;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -10em;
+	margin-top: -10em;
+	perspective: 1000px;
+}
+
+.box {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transform: rotateX(-20deg) rotateY(-20deg);
+	animation: mymove 6s ease-in-out infinite;
+}
+
+.box div {
+	background: -webkit-linear-gradient(left, rgba(54, 226, 248, 0.5) 0px, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), -webkit-linear-gradient(top, rgba(54, 226, 248, 0.5) 0px, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px);
+	background-size: 5em 5em;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: 2px solid rgba(54, 226, 248, 0.5);
+	box-shadow: 0 0 5em rgba(0, 128, 0, 0.4);
+}
+
+.front {
+	transform: translateZ(10em);
+}
+
+.back {
+	transform: translateZ(-10em);
+}
+
+.left {
+	transform: rotateY(-90deg) translateZ(10em);
+}
+
+.right {
+	transform: rotateY(90deg) translateZ(10em);
+}
+
+.top {
+	transform: rotateX(90deg) translateZ(10em);
+}
+
+.bottom {
+	transform: rotateX(-90deg) translateZ(10em);
+}
+
+
+@keyframes mymove{
+	from{
+		transform: translateZ(-10em) rotateX(0) rotateY(0);
+	}
+	to{
+		transform: translateZ(-10em) rotate(360deg) rotateY(360deg);
+	}
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#outer{
+				width: 100%;
+				height: 1000px;
+				background-color: #ccc;
+			}
+			#circle{
+				width: 50px;
+				height: 50px;
+				background-color: lightgreen;
+				border-radius: 50%;
+				position: relative;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="outer">
+			<div id="circle">
+				
+			</div>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		var arrLeft = [];
+		var arrTop = []
+		var circle = document.getElementById('circle');
+		var outer = document.getElementById('outer');
+		var cirLeft = 0;
+		var cirTop = 0;
+		arrLeft.push(0);
+		arrTop.push(0);
+		outer.addEventListener('mousemove',function(e){
+			cirLeft = e.pageX - circle.offsetWidth/2;
+			cirTop = e.pageY - circle.offsetHeight/2;
+			circle.style.left = cirLeft + 'px'
+			circle.style.top = cirTop + 'px'
+		},false)
+		
+	</script>
+	
+</html>

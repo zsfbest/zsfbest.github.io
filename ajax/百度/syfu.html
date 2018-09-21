@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>百度</title>
+		<script src="../jquery-3.3.1.min.js" type="text/javascript"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			form{
+				width: 250px;
+				margin: 150px auto 0;
+			}
+		
+			#showInf{
+				width: 250px;
+				margin: 0 auto;
+				list-style: none;
+				/*border: solid 1px #ccc;*/
+			}
+			li{
+				margin: 5px 0;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<input type="text" name="" id="" value="" /><button type="button">百度一下</button>
+			<!--
+			//阻止enter键提交
+			//在form表单或input中加入：onkeydown="if(event.keyCode==13){return false;}"
+			//other:多个input的输入框，且button的type为button，不能为submit；
+			-->
+			<input type="text" style="display: none;" />
+		</form>
+		<ul id="showInf"></ul>
+	</body>
+	<script type="text/javascript">
+		
+		$(function(){
+			$(window).keyup(function(e){
+				
+				if(e.keyCode == 13){
+					console.log($('input:first'))
+					$('input:first').focus();
+				}
+			})
+			var valP = '';
+			$('input').keyup(function(e){
+				
+				valP=$(this).val();	
+				var lis=$('li')
+				if(e.keyCode == 40){
+					if(!(lis.length == 0)){
+						var indexcheck=0;
+						for(var i=0;i<lis.length;i++){
+							if($(lis[i]).css('background-color') == 'rgb(144, 238, 144)'){
+								$(lis[i]).css('background-color','')
+								if(i == lis.length-1)	i=-1;
+								indexcheck=i+1;
+							}
+						}
+						$(lis[indexcheck]).css('background-color','lightgreen')
+					}
+				}else if(e.keyCode == 38){
+					if(!(lis.length == 0)){
+						var indexcheck=0;
+						for(var i=0;i<lis.length;i++){
+							if($(lis[i]).css('background-color') == 'rgb(144, 238, 144)'){
+								$(lis[i]).css('background-color','')
+								if(i == 0)	i=lis.length;
+								indexcheck=i-1;
+							}
+						}
+						$(lis[indexcheck]).css('background-color','lightgreen');
+					}
+				}
+				else if(e.keyCode == 13){
+					for(var i=0;i<lis.length;i++){
+						if($(lis[i]).css('background-color') == 'rgb(144, 238, 144)'){
+							valP=$(lis[i]).html()
+						}
+					}
+					searchInf(valP);
+				}
+				else{
+					checkBaidu(valP);
+					
+				}
+				//上38，下40
+			});
+			
+			
+		})
+		
+		
+		
+		//启动搜索 输入的是ss
+		//https://www.baidu.com/s?
+		//ie=utf-8&mod=1&isbd=1&isid=88d0a2ec00002c87&ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu
+		//&wd=ss
+		//&oq=ss&rsv_pq=88d0a2ec00002c87
+		//&rsv_t=fa4famTVvrjDit2VqlyMS7HikX0%2Bsxk1rEejcYu4Pvy%2Bk1nlrZD1dHwAYus&rqlang=cn&rsv_enter=1
+		//&inputT=6&rsv_sug3=5&rsv_sug1=7&rsv_sug7=100&rsv_sug2=0&rsv_sug4=805&bs=ss
+		//&rsv_sid=1445_21125_18560_26924_20928&_ss=1&clist=f9f2d6e067075f8&hsug=&f4s=1&csor=2&_cr1=30983
+		
+		function searchInf(val){
+//				window.open('https://www.baidu.com/s?wd='+val);
+				window.location.href='https://www.baidu.com/s?wd='+val;
+		}
+		
+		function callback(data){
+			var ob = data.s;
+			var str = '';
+			for(var i in ob){
+				str += '<li>'+ob[i]+'</li>'
+			}
+			$('#showInf').empty().append(str);
+			
+			
+			$('li').hover(function(){
+					$(this).css('background-color','lightgreen')
+			},function(){
+						$(this).css('background-color','')
+			}).click(function(){
+				searchInf($(this).html())
+			});
+		}
+		
+		function checkBaidu(val){
+			$.ajax({
+				url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?cb=callback',
+				data:{wd:val},
+				type:'get',
+				dataType:'jsonp',
+				jsonp:"cb",
+				
+				error:function(){
+					console.log('erro')
+				}
+			})
+		}
+	</script>
+</html>
+
+
+<!--https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su
+	
+?wd=haha&json=1&p=3&sid=1436_21124_26350_20929&req=2&csor=3&pwd=he&cb=callback-->
