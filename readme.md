@@ -1,9 +1,15 @@
 <hr style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3>
+
+
+[图片放大](https://zsfbest.github.io/京东放大.html?_blank);
+
 原生js：
 <a href="https://zsfbest.github.io/京东放大.html">图片放大</a>&nbsp;&nbsp;
 <a href="https://zsfbest.github.io/小球移动.html">小球随移</a>&nbsp;&nbsp;
 <a href="https://zsfbest.github.io/ajax/%E7%99%BE%E5%BA%A6/syfu.html">百度接口</a>&nbsp;&nbsp;
 <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#987cb9 SIZE=3>
+
+
 <br />
     bootsrap:
     <a href="https://zsfbest.github.io/bootstrap/粤嵌后台/HW/login.html" target="_blank">粤嵌后台登录界面</a>&nbsp;&nbsp;
