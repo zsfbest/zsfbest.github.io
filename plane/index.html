@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh" manifest="syfubest.appcache">
+<head>
+    <meta charset="UTF-8">
+    <title>微信经典飞机大战</title>
+    <link rel="stylesheet" href="./asset/css/main.css">
+</head>
+<body>
+<div id="content">
+    <div id="start">
+        <button onclick="start()">开始游戏</button>
+    </div>
+    <div id="main">
+        <div id="score">0</div>
+        <div id="suspend">
+            <button id="continue">继续游戏</button>
+            <button id="restart" onclick="restart()">重新开始</button>
+        </div>
+    </div>
+    <div id="settlement">
+        <p id="final-text">飞机大战分数</p>
+        <p id="final-score">1000</p>
+        <p id="syfubest"></p>
+        <button onclick="restart()">重新开始</button>
+    </div>
+</div>
+
+<script src="asset/js/main.js"></script>
+<script>
+    // document.cookie="syfu=best; expires=Thu, 18 Dec 2019 12:00:00 GMT; path=/";
+    document.cookie="username=John Smith; expires=Thu, 18 Dec 2013 12:00:00 GMT; path=/";
+</script>
+</body>
+</html>
