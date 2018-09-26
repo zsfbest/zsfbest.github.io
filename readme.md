@@ -12,15 +12,12 @@
 <br />
     bootsrap:
 
-
-
 [粤嵌后台登录界面](https://zsfbest.github.io/bootstrap/粤嵌后台/HW/login.html);
 [粤嵌后台界面](https://zsfbest.github.io/bootstrap/粤嵌后台/HW/list.html);
 
 <br />
         Jquery:
 
-		
 [垃圾桶](https://zsfbest.github.io/纯jquery/垃圾桶);
 [柱状图](https://zsfbest.github.io/纯jquery/HW01.html);
 [表格](https://zsfbest.github.io/纯jquery/HW02.html);
@@ -34,8 +31,6 @@
 <br />
         2D,3D,动画:
 
-
-		
 [特效1](https://zsfbest.github.io/合班后/circle.html);
 [特效2](https://zsfbest.github.io/合班后/hovereffect.html);
 [立方球](https://zsfbest.github.io/合班后/zsfcircle.html);
@@ -45,3 +40,5 @@
 [侧边栏](https://zsfbest.github.io/nav.html);
 
 <br />
+        cookie--localStorage---appcache
+        [飞机大战（最高分）](https://zsfbest.github.io/plane)
