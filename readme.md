@@ -44,6 +44,10 @@
 <br />
         [飞机大战（最高分）](https://zsfbest.github.io/plane)
 <br />
+        H5:
+<br />
+        [拖拽替换](https://zsfbest.github.io/列表拖动)
+<br />
         canvas
 <br />
         [粒子分割](https://zsfbest.github.io/html5-canvas)
