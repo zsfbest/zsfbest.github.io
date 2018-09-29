@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>syfubest</title>
+</head>
+<body>
+    
+    <canvas id="syfu" width="700" height="700"></canvas>
+    <canvas id="china" width="700" height="700"></canvas>
+    <canvas id="kor" width="700" height="700"></canvas>
+    <script>
+     var sf = document.getElementById('syfu');
+     var china = document.getElementById('china');
+     var kor = document.getElementById('kor');
+     var ctx=sf.getContext("2d");
+     var chin=china.getContext("2d");
+     var korea=kor.getContext("2d");
+    
+    // 五角星
+    function drawStar( cxt , r , R , x , y , rot , borderWidth , borderStyle , fillStyle){
+        cxt.beginPath();
+        for( var i = 0 ; i < 5 ; i ++){
+            cxt.lineTo(Math.cos((18+72*i - rot)/180*Math.PI) * R + x ,- Math.sin((18+72*i - rot )/180*Math.PI) * R + y);
+            cxt.lineTo(Math.cos((54+72*i - rot)/180*Math.PI) * r + x ,- Math.sin((54+72*i - rot )/180*Math.PI) * r + y);
+        }
+        cxt.closePath();
+
+        cxt.lineWidth = borderWidth;
+        cxt.strokeStyle = borderStyle;
+        cxt.fillStyle = fillStyle;
+        cxt.fill();
+        cxt.stroke();
+    };
+    chin.beginPath();
+    chin.fillStyle="red";
+    chin.lineWidth = 5;
+    chin.strokeStyle="black";
+    chin.fillRect(90,0,460,310);
+    chin.stroke();
+    chin.fill();
+    drawStar(chin,60,25,180,130,35,1,'yellow','yellow')
+    drawStar(chin,18,8,250,60,-10,1,'yellow','yellow')
+    drawStar(chin,18,8,280,110,10,1,'yellow','yellow')
+    drawStar(chin,18,8,290,160,35,1,'yellow','yellow')
+    drawStar(chin,18,8,260,210,50,1,'yellow','yellow')
+
+
+    // ======================================================
+    // 法国国旗
+    // ======================================================
+    ctx.beginPath();
+    ctx.fillStyle="black";
+    ctx.lineWidth = 5;
+    ctx.strokeStyle="black";
+    ctx.fillRect(95,95,460,310);
+    ctx.stroke();
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle="blue";
+    ctx.fillRect(100,100,150,300);
+    ctx.stroke();
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = "white";
+    ctx.fillRect(250,100,150,300);
+    ctx.stroke();
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(400,100,150,300);
+    ctx.stroke();
+    ctx.fill();
+
+
+    // =======================================================
+    // 韩国国旗
+    // =======================================================
+    korea.beginPath();
+    korea.fillStyle="white";
+    korea.lineWidth = 5;
+    korea.strokeStyle="black";
+    korea.fillRect(90,0,460,310);
+    korea.stroke();
+    korea.fill();
+
+    korea.beginPath();
+    korea.fillStyle = 'black';
+    korea.lineWidth = 8;
+    korea.moveTo(150,20);
+    korea.lineTo(120,70);
+    korea.stroke();
+    korea.fill();
+
+    korea.beginPath();
+    korea.fillStyle = 'black';
+    korea.lineWidth = 8;
+    korea.moveTo(160,25);
+    korea.lineTo(130,75);
+    korea.stroke();
+    korea.fill();
+
+    korea.beginPath();
+    korea.fillStyle = 'black';
+    korea.lineWidth = 8;
+    korea.moveTo(170,30);
+    korea.lineTo(140,80);
+    korea.stroke();
+    korea.fill();
+
+    // 左下
+    korea.beginPath();
+    korea.lineWidth = 8;
+    korea.moveTo(130,240);
+    korea.lineTo(160,290);
+    korea.stroke();
+
+    korea.beginPath();
+    korea.lineWidth = 8;
+    korea.moveTo(140,235);
+    korea.lineTo(152,255);
+    korea.stroke();
+
+    korea.beginPath();
+    korea.lineWidth = 8;
+    korea.moveTo(158,265);
+    korea.lineTo(170,285);
+    korea.stroke();
+
+    korea.beginPath();
+    korea.lineWidth = 8;
+    korea.moveTo(150,230);
+    korea.lineTo(180,280);
+    korea.stroke();
+
+    // 中心圆
+    korea.beginPath();
+    korea.fillStyle = "blue";
+    korea.strokeStyle='white';
+    korea.arc(300,150,60,0,Math.PI);
+    korea.fill();
+
+    korea.beginPath();
+    korea.fillStyle = "red";
+    korea.strokeStyle='pink';
+    korea.arc(300,150,60,Math.PI,0);
+    korea.fill();
+
+    korea.beginPath();
+    korea.fillStyle = "red";
+    korea.arc(270,150,30,0,2*Math.PI);
+    korea.fill();
+
+    korea.beginPath();
+    korea.fillStyle = "blue";
+    korea.arc(330,150,30,0,2*Math.PI);
+    korea.fill();
+    </script>
+</body>
+</html>
