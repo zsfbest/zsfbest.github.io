@@ -51,4 +51,8 @@
         canvas
 <br />
         [粒子分割](https://zsfbest.github.io/html5-canvas)
-        [国旗huizhi](https://zsfbest.github.io/canvas)
+<br />
+        [国旗绘制](https://zsfbest.github.io/canvas)
+<br />
+        [粒子爆炸](https://zsfbest.github.io/canvas-粒子)
+        [粒子爆炸](https://zsfbest.github.io/canvas-粒子/index2.html)
