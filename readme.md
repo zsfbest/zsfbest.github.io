@@ -27,6 +27,10 @@
 [滚动监听](https://zsfbest.github.io/三级联动&交互/HW02.html);
 [轮播](https://zsfbest.github.io/纯jquery/轮播.html);
 
+[复选框](https://zsfbest.github.io/纯jquery/);
+[高级轮播](https://zsfbest.github.io/纯jquery/lunbo/);
+
+
 
 <br />
         2D,3D,动画:
