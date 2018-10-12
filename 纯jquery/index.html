@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table{
+            width: 400px;
+        }
+        th{
+            background-color: #ddd;
+        }
+        th,td{
+            width: 100px
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <table border="solid 1px #ccc" cellspacing="0">
+        <thead>
+            <tr>
+                <th></th>
+                <th>姓名</th>
+                <th>薪水</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>张三</td>
+                <td>20000</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>李四</td>
+                <td>22000</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>王五</td>
+                <td>14000</td>
+                <td>26</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        $(function(){
+            $('input').on('click',function(){
+                if($(this)[0].checked){
+                    $(this).parent().css('backgroundColor','yellow').siblings().css('backgroundColor','yellow');
+                }else{
+                    // if(($(this).parent().parent().index()) % 2 != 0){
+                        $(this).parent().css('backgroundColor','white').siblings().css('backgroundColor','white');
+                }
+            })
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
