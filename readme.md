@@ -12,8 +12,8 @@
 <br />
     bootsrap:
 
-[粤嵌后台登录界面](https://zsfbest.github.io/bootstrap/粤嵌后台/HW/login.html);
-[粤嵌后台界面](https://zsfbest.github.io/bootstrap/粤嵌后台/HW/list.html);
+[后台登录界面](https://zsfbest.github.io/bootstrap/粤嵌后台/HW/login.html);
+[后台界面](https://zsfbest.github.io/bootstrap/粤嵌后台/HW/list.html);
 
 <br />
         Jquery:
