@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container-fluid row">
+        
+        <div id="contentbox" class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2">
+            
+            <div id="nav" class="row">
+                <span class="leftspam selecaction" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                    全部商品
+                </span>
+                <span class="leftspam" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    京东大药房
+                 </span>
+                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 pull-right">
+                     <span>配送至：</span>
+                     <select name="checkval" id="">
+                         <option name='first' checked='checked'>广州市天河区</option>
+                         <option name='first'>韶关市南雄市</option>
+                        </select>
+                 </div>
+                 <div id="handnav" class="row">
+                       <div>
+                            <label class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                    <input type="checkbox" name="selAll" v-model='checked' id=""><span>全选</span>
+                               </label>
+                               <span class="leftspam" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                    商品
+                                 </span>
+                                 <span class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right">操作</span>
+                                 <span class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right">小计</span>
+                                 <span class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right">数量</span>
+                                 <span class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right">单价</span>
+                       </div>
+                 </div>
+                 
+            </div>
+
+            <div id="boxtext" class="row" v-for='item in goods'>
+                    <input type="checkbox" v-model='checked'  value="">
+                    <span>{{item.store}}</span>
+                    <hr style="height:1px;border:none;border-top:1px solid #555555;" />
+                    <div class="row goods">
+                        <input class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-left" type="checkbox" v-model='checked' name="" id="">
+                        <img class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-left" :src="item.imgurl" alt="" srcset="">
+                        <span class="col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-left">{{item.title}}</span>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-left">
+                            <p>颜色：{{item.color}}</p>
+                            <p>尺码：{{item.size}}</p>
+                        </div>
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-left">
+                            <p>￥{{item.price}}</p>
+                            <select name="buytype" id="">
+                                <option value="cx">促销</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-left ">
+                            <button @click='subGoods(item)'>-</button><input type="text"  v-model="item.count" @change='reset(item)'><button @click='addGoods(item)'>+</button>
+                        </div>
+                        <div id="gopri" class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-left pullleft">
+                            <span>{{item.sum}}</span>
+                        </div>
+                        <div class="row col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-right ">
+                            <a class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left" @click='deleGoods(item)'>删除</a>
+                            <a class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left">移到我的关注</a>
+                            <a class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left">加到我的关注</a>
+                        </div>
+                    </div>
+             </div>
+
+        </div>
+        
+    </div>
+    <script>
+    
+    var items = [
+            {
+                title:'南极人加绒卫衣女宽松2018秋冬新款女装连帽韩版卡通印花外套女学生 粉色加绒 M(105-115斤)',
+                imgurl:'//img12.360buyimg.com/n7/jfs/t1/4973/29/4766/499144/5b9d1833E629672c0/334b019444392497.jpg',
+                price:'168.00',
+                store:'云夏服饰专营店',
+                shocolor:'黑色',
+                color:'黑色',
+                size:'180/92A/XL',
+                count:1,
+                sum:"168.00",
+                checked:false
+            },{
+                title:'2018秋冬季韩版新款卫衣女学生韩版宽松外套大码连帽时尚潮流休闲运动套装女秋冬装女女装 黑色 L',
+                imgurl:'//img10.360buyimg.com/n7/jfs/t1/2918/32/11784/498842/5bd12af5Eae028e0a/c2830bf2eba9e5c1.jpg',
+                price:'148.00',
+                store:'茁娜旗舰店',
+                color:'黑色',
+                size:'180/92A/XL',
+                count:1,
+                sum:"148.00",
+                checked:false
+            },{
+                title:'利芙娜连衣裙2018新款秋冬女韩版加棉加厚大码女装气质假两件收腰条纹显瘦中长款打底裙 图片色 L',
+                imgurl:'//img13.360buyimg.com/n7/jfs/t1/7117/38/6154/105516/5be022e9E2454925a/83999b65552d061f.jpg',
+                price:'138.00',
+                store:'利芙娜拼购店',
+                color:'黑色',
+                size:'180/92A/XL',
+                count:1,
+                sum:"138.00",
+                checked:false
+            },{
+                title:'加绒加厚卫衣女连帽宽松型2018秋冬新款韩版潮流学生绿色上衣情侣外套 鹿系墨绿色 180XL',
+                imgurl:'//img14.360buyimg.com/n7/jfs/t25900/170/1294513919/215901/ea9d3b43/5badcb11N460220ef.jpg',
+                price:'158.00',
+                store:'第七公社',
+                color:'黑色',
+                size:'180/92A/XL',
+                count:1,
+                sum:"158.00",
+                checked:false
+            },{
+                title:'茵曼2018秋装新款连帽印花抽绳宽松休闲运动长袖卫衣女【18830$82079】 黛绿色 S',
+                imgurl:'//img10.360buyimg.com/n7/jfs/t1/4201/32/15665/204489/5bdfc0e8E7735664c/0b7169eae424ee4a.jpg',
+                price:'179.00',
+                store:'茵曼官方旗舰店',
+                color:'黑色',
+                size:'180/92A/XL',
+                count:1,
+                sum:"179.00",
+                checked:false
+            },{
+                title:'A21以纯男装 2018秋季新品针织宽松连帽落肩长袖卫衣衫4831310004 黑色 180/92A/XL',
+                imgurl:'https://img10.360buyimg.com/cms/s80x80_jfs/t1/8876/15/6407/136242/5be0f3a0E3228ed1c/1b8a74ef93300ceb.jpg',
+                price:'149.00',
+                store:'A21官方旗舰店',
+                color:'黑色',
+                size:'180/92A/XL',
+                count:1,
+                sum:"149.00",
+                checked:false
+            }
+        ];
+
+        var appjd = new Vue({
+            el:'#contentbox',
+            data:{
+                checked:true,
+                goods:items
+            },
+            methods:{
+                addGoods(item){
+                    item.count++;
+                    item.sum = item.count * item.price;
+                    item.sum = item.sum.toFixed(2);
+                },
+                subGoods(item){
+                    if(item.count == 1) return 1;
+                    item.count--;
+                    item.sum = item.count * item.price;
+                    item.sum = item.sum.toFixed(2);
+                },
+                deleGoods(item){
+                   this.goods.splice(this.goods.indexOf(item),1)
+                },
+                reset(item){
+                    item.sum = item.count * item.price;
+                    item.sum = item.sum.toFixed(2);
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

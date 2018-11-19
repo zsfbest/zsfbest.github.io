@@ -1,0 +1,109 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+html .container-fluid,
+body .container-fluid {
+  height: 100%;
+}
+html .container-fluid #contentbox,
+body .container-fluid #contentbox {
+  margin-top: 5%;
+  height: 100%;
+}
+html .container-fluid #contentbox #nav,
+body .container-fluid #contentbox #nav {
+  height: 15%;
+}
+html .container-fluid #contentbox #nav .leftspam,
+body .container-fluid #contentbox #nav .leftspam {
+  font-size: 18px;
+  padding-right: 5%;
+}
+html .container-fluid #contentbox #nav #handnav,
+body .container-fluid #contentbox #nav #handnav {
+  margin: 1%  0;
+  height: 35%;
+  background-color: #ccc;
+}
+html .container-fluid #contentbox #nav #handnav div,
+body .container-fluid #contentbox #nav #handnav div {
+  height: 80%;
+  margin-top: 0.5%;
+}
+html .container-fluid #contentbox #nav #handnav div label,
+body .container-fluid #contentbox #nav #handnav div label {
+  height: 100%;
+  font-weight: 300;
+  vertical-align: middle;
+  display: inline-block;
+}
+html .container-fluid #contentbox #nav #handnav div label input,
+body .container-fluid #contentbox #nav #handnav div label input {
+  height: 100%;
+  margin: 0;
+  vertical-align: middle;
+}
+html .container-fluid #contentbox #nav #handnav div label span,
+body .container-fluid #contentbox #nav #handnav div label span {
+  font-style: Tahoma;
+}
+html .container-fluid #contentbox #nav #handnav div span,
+body .container-fluid #contentbox #nav #handnav div span {
+  vertical-align: middle;
+  display: inline-block;
+  font-style: Tahoma;
+  margin-right: 3%;
+}
+html .container-fluid #contentbox #boxtext hr,
+body .container-fluid #contentbox #boxtext hr {
+  margin: 5px 0;
+}
+html .container-fluid #contentbox #boxtext .goods input,
+body .container-fluid #contentbox #boxtext .goods input {
+  margin-top: 5%;
+}
+html .container-fluid #contentbox #boxtext .goods img,
+body .container-fluid #contentbox #boxtext .goods img {
+  width: 15%;
+  margin-left: -3%;
+}
+html .container-fluid #contentbox #boxtext .goods span,
+body .container-fluid #contentbox #boxtext .goods span {
+  margin-top: 2%;
+  font-size: 12px;
+}
+html .container-fluid #contentbox #boxtext .goods div,
+body .container-fluid #contentbox #boxtext .goods div {
+  margin-top: 3%;
+  margin-left: 3px;
+}
+html .container-fluid #contentbox #boxtext .goods div p,
+body .container-fluid #contentbox #boxtext .goods div p {
+  font-size: 12px;
+}
+html .container-fluid #contentbox #boxtext .goods div input,
+body .container-fluid #contentbox #boxtext .goods div input {
+  width: 30%;
+  text-align: center;
+}
+html .container-fluid #contentbox #boxtext .goods div a,
+body .container-fluid #contentbox #boxtext .goods div a {
+  cursor: pointer;
+}
+html .container-fluid #contentbox #boxtext .goods div a:hover,
+body .container-fluid #contentbox #boxtext .goods div a:hover {
+  color: red;
+}
+html .container-fluid #contentbox #boxtext .goods #gopri,
+body .container-fluid #contentbox #boxtext .goods #gopri {
+  margin-top: 36px;
+}
+html .container-fluid #contentbox #boxtext .goods .pullleft,
+body .container-fluid #contentbox #boxtext .goods .pullleft {
+  margin-left: -5%;
+}
+/*# sourceMappingURL=./style.css.map */
